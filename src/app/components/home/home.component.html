@@ -1,0 +1,38 @@
+<div id="carrusel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carrusel" data-slide-to="0"></li>
+    <li data-target="#carrusel" data-slide-to="1" class="active"></li>
+    <li data-target="#carrusel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{imageCasaRoja}}" alt="Inicio">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Bienvenido</h5>
+        <p>Este sitio web es una presentación de conocimientos actuales en desarrollo web</p>
+      </div>
+    </div>
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{{imageEdificio}}" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Contenido</h5>
+        <p>Algunas funcionalidades están limitadas y es necesario introducir un usuario y contraseña</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{{imageFresas}}" alt="Third slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Futuro</h5>
+        <p>La página se irá actualizando con nuevo contenido según lo vaya manejando</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carrusel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carrusel" role="button" data-slide="next" onclick="$('#carrusel').carousel('next')">
+    <span class="carousel-control-next-icon" aria-hidden="true" ></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

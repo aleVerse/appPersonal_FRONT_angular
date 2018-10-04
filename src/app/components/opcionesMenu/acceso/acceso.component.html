@@ -1,0 +1,30 @@
+<div class="contenedorAcceso">
+    <div>
+        <h3>Formulario de petición de acceso a la demo</h3>
+    </div>
+    <form [formGroup]="formularioContacto" class="form" (ngSubmit)="onSubmit()">
+        <div formGroupName="nombreCompleto">
+            <mat-form-field class="input">
+                <input matInput placeholder="Nombre" value="" formControlName="txtNombre">
+            </mat-form-field>
+
+            <mat-form-field class="input">
+                <input matInput placeholder="Apellidos" value="" formControlName="txtApellidos">
+            </mat-form-field>
+        </div>
+
+        <mat-form-field class="input">
+            <input matInput placeholder="Empresa" value="" formControlName="txtEmpresa">
+        </mat-form-field>
+
+        <mat-form-field class="input">
+            <input matInput placeholder="Correo electrónico" value="" formControlName="txtCorreo">
+        </mat-form-field>
+
+        <button type="submit" [disabled]="!formularioContacto.valid" class="btn btn-outline-danger">Enviar</button>
+
+        <div id="mensajeInfo" [hidden]='!mostrarMensajeCorrecto' class="alert alert-success">
+            Petición enviada
+        </div>
+    </form>
+</div>
