@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { BarraMenuComponent } from './components/barraMenu/barraMenu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,9 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { TecnologiasComponent } from './components/opcionesMenu/tecnologias/tecnologias.component';
 import { AccesoComponent } from './components/opcionesMenu/acceso/acceso.component';
 import { TecnologiasGridComponent } from './components/opcionesMenu/tecnologias/tecnologias-grid/tecnologias-grid.component';
-import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
-import { HerramientasComponent } from './herramientas/herramientas.component';
-import { AuthenticationService } from './services/authentication.service';
+
+import { HerramientasComponent } from './components/herramientas/herramientas.component';
+import { LoginDialogComponent } from './components/ventanasModal/login/login.modal.component';
+import { NuevaTecnologiaDialogComponent } from './components/ventanasModal/nueva-tecnologia.modal/nueva-tecnologia.modal.component';
+import { AuthenticationModule } from './authModule/auth.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { AuthenticationService } from './services/authentication.service';
     TecnologiasComponent,
     AccesoComponent,
     TecnologiasGridComponent,
-    HerramientasComponent
+    HerramientasComponent,
+    LoginDialogComponent,
+    NuevaTecnologiaDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,11 +39,12 @@ import { AuthenticationService } from './services/authentication.service';
     MaterialModule,
     NgbCarouselModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthenticationModule
   ],
   providers: [
-    AuthenticationService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LoginDialogComponent, NuevaTecnologiaDialogComponent]
 })
 export class AppModule { }

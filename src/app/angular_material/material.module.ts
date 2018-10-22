@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
     MatButtonModule,
@@ -8,9 +8,10 @@ import {
     MatIconModule,
     MatCardModule,
     MatGridListModule,
-    MatInputModule
+    MatInputModule,
 } from '@angular/material';
 
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
     imports: [
         MatButtonModule,
@@ -20,7 +21,8 @@ import {
         MatCardModule,
         MatGridListModule,
         MatInputModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatDialogModule
     ],
     exports: [
         MatButtonModule,
@@ -30,10 +32,11 @@ import {
         MatCardModule,
         MatGridListModule,
         MatInputModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatDialogModule
     ]
 })
 
 export class MaterialModule {
-// tslint:disable-next-line:eofline
+    // tslint:disable-next-line:eofline
 }

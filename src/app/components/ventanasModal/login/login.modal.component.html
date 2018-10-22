@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Login</h1>
+<div id="tablaFx" fxLayout="column" fxLayoutAlign="start" mat-dialog-content>
+  <p>Introduce los datos de inicio que se han facilitado</p>
+  <mat-form-field>
+    <input matInput cdkFocusInitial [(ngModel)]="nombre" placeholder="Nombre de usuario">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="contra" placeholder="Contraseña ">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <div class="accionesDialogo">
+    <button mat-button (click)="login()">Entrar</button>
+    <button mat-button (click)="close()">Cancelar</button>
+  </div>
+</div>

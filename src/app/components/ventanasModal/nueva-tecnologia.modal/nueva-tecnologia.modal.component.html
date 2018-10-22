@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Nueva tarjeta</h1>
+<div id="tablaFx" fxLayout="column" fxLayoutAlign="start" mat-dialog-content>
+  <p>Que quieres añadir</p>
+  <mat-form-field>
+    <input matInput cdkFocusInitial [(ngModel)]="nombre" placeholder="Nombre de usuario">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="subtitulo" placeholder="subtitulo ">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="imagen" placeholder="cambiar por subida de archivo">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="descripcion" placeholder="descripcion ">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <div class="accionesDialogo">
+    <button mat-button (click)="guardar()">Guardar</button>
+    <button mat-button (click)="close()">Cancelar</button>
+  </div>
+</div>
