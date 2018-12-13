@@ -1,9 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { TokenAlmacenamiento } from '../../../accessToken/token.almacenamiento';
-import { AuthenticationService } from '../../../authModule/service/authentication.service';
+import { MatDialogRef } from '@angular/material';
+import { AuthenticationService } from '../../../authModule/authentication.service';
+import { FormControl } from '@angular/forms';
+import { TokenAlmacenamiento } from '../../../authModule/token-Almacenamiento.service';
 
-export interface DatosDialogo {
+export interface Sesion {
   nombre: string;
   contra: string;
 }
@@ -17,18 +18,31 @@ export interface DatosDialogo {
 })
 export class LoginDialogComponent implements OnInit {
 
+  nombre: string;
+  contra: string;
+  nombreFormControl: FormControl;
+  contraFormControl: FormControl;
+
   constructor(private authService: AuthenticationService, private token: TokenAlmacenamiento,
-    public dialogRef: MatDialogRef<LoginDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DatosDialogo) { }
+    public dialogRef: MatDialogRef<LoginDialogComponent>) { }
 
   ngOnInit() {
+    this.nombreFormControl = new FormControl();
+    this.contraFormControl = new FormControl();
+
   }
 
   close(): void {
     this.dialogRef.close();
   }
 
-  login() {
-    console.log('inicio de sesión enviado nombre:' + this.data.nombre + 'contraseña' + this.data.contra);
+  login(valores: Sesion) {
+    console.log('inicio de sesión enviado nombre: ' + JSON.stringify(valores));
   }
+
+  // Validators
+  isWrongRequired(formControl: FormControl) {
+    return formControl.touched && formControl.dirty && formControl.hasError('required');
+  }
+
 }

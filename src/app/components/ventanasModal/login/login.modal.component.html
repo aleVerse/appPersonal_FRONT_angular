@@ -1,16 +1,25 @@
 <h1 mat-dialog-title>Login</h1>
-<div id="tablaFx" fxLayout="column" fxLayoutAlign="start" mat-dialog-content>
-  <p>Introduce los datos de inicio que se han facilitado</p>
-  <mat-form-field>
-    <input matInput cdkFocusInitial [(ngModel)]="nombre" placeholder="Nombre de usuario">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput [(ngModel)]="contra" placeholder="Contraseña ">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <div class="accionesDialogo">
-    <button mat-button (click)="login()">Entrar</button>
-    <button mat-button (click)="close()">Cancelar</button>
+<form #form="ngForm" (ngSubmit)="login(form.value)">
+  <div id="tablaFx" fxLayout="column" fxLayoutAlign="start" mat-dialog-content>
+    <p>Introduce los datos de inicio que se han facilitado</p>
+    <mat-form-field appearance="legacy">
+      <input matInput type="text" cdkFocusInitial name="nombre" (ngModel)="nombre" required [formControl]="nombreFormControl" placeholder="Nombre de usuario">
+      <mat-error *ngIf="isWrongRequired(nombreFormControl)">
+        Falta este campo obligatorio
+      </mat-error>
+
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <input matInput type="password" name="contra" (ngModel)="contra" [formControl]="contraFormControl" required placeholder="Contraseña ">
+      <mat-error *ngIf="isWrongRequired(contraFormControl)">
+        Falta este campo obligatorio
+      </mat-error>
+    </mat-form-field>
   </div>
-</div>
+  <div mat-dialog-actions>
+    <div class="accionesDialogo">
+      <button mat-button type="submit" [disabled]="!form.valid">Entrar</button>
+      <button mat-button (click)="close()">Cancelar</button>
+    </div>
+  </div>
+</form>

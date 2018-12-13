@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '../../../../node_modules/@angular/material';
+import { MatDialog } from '@angular/material';
 import { NuevaTecnologiaDialogComponent } from '../ventanasModal/nueva-tecnologia.modal/nueva-tecnologia.modal.component';
 
 @Component({

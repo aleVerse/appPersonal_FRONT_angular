@@ -1,10 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { AuthenticationService } from './service/authentication.service';
-import { TokenAlmacenamiento } from './accessToken/token.almacenamiento';
+import { AuthenticationService } from './authentication.service';
+import { TokenAlmacenamiento } from './token-Almacenamiento.service';
 @NgModule({
-    declarations: [TokenAlmacenamiento],
-    providers: [AuthenticationService],
-    exports: [TokenAlmacenamiento]
+    providers: [TokenAlmacenamiento, AuthenticationService]
 })
 export class AuthenticationModule {
 }
